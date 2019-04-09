@@ -4,7 +4,6 @@
  */
 
 var x = 0;
-
 function time() {
     //id da linha...
     var idTime = 0;
