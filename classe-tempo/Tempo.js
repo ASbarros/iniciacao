@@ -5,19 +5,27 @@
 
 var x = 0;
 
-window.addEventListener("load", function time() {
+function time() {
     //id da linha...
-    var i = 0;
+    var idTime = 0;
+    var idSVG = 0;
     var inter = setInterval(function aux() {
-        i++;
-        createLine(x, 40, x, 60, "time" + i, "idSVG0", "%", "time", "", "", "");
-        x = x + 0.18;
-        $('#time' + (i - 1) + '-idSVG0').remove();
-        if (x >= 100) {
-            //clearInterval(inter);
-            x = 0;
+        try {
+            idTime++;
+            createLine(x, 40, x, 60, "time" + idTime, "idSVG" + idSVG, "%", "time", "", "", "");
+            x = x + 0.18;
+            //id da linha ...
+            var id = 'time' + (idTime - 1) + '-idSVG' + idSVG;
+            removeLine(id);
+            if (x >= 99.3 ) {
+                x = 0;
+                removeLine("time" + idTime + "-idSVG" + (idSVG));
+                idSVG++;
+            }
         }
-    }, 40);
-
-
-});
+        catch (e) {
+            clearInterval(inter);
+        }
+    }, 40)
+    
+}

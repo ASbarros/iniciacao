@@ -11,19 +11,20 @@ function createPauta(idDiv) {
     const linha = 0;
     //onde sera a primeira linha...
     let primeiraLinha = 40;
+    let x2 = 99.3;
     //criando as linhas, cada uma com seu identificador...
     for (let i = 5, y1 = primeiraLinha, y2 = y1; linha < i; i-- , y1 = y1 + espacamento, y2 = y1) {
-        createLine(0, y1, 100, y2, "line" + i, idDiv, "%", "linha");
+        createLine(0, y1, x2, y2, "line" + i, idDiv, "%", "linha");
     }
     createClaveSol(idDiv);
     compasso(4, idDiv);
     //criando as linhas adicionais superiores...
     for (let i = 5, y1 = 15, y2 = y1; linha < i; i-- , y1 = y1 + espacamento, y2 = y1) {
-        createLine(0, y1, 100, y2, "additional-sup-" + i, "idSVG" + NumDiv, "%", "suplementar", "createLineAdditional(event,id)", "createLineTemp(event,id)", "deleteLine(id)");
+        createLine(0, y1, x2, y2, "additional-sup-" + i, "idSVG" + NumDiv, "%", "suplementar", "createLineAdditional(event,id)", "createLineTemp(event,id)", "deleteLine(id)");
     }
     //cirando as linhas adicionais infeires...
     for (let i = 5, y1 = 85, y2 = y1; linha < i; i-- , y1 = y1 - espacamento, y2 = y1) {
-        createLine(0, y1, 100, y2, "additional-inf-" + i, "idSVG" + NumDiv, "%", "suplementar", "createLineAdditional(event,id)", "createLineTemp(event,id)", "deleteLine(id)");
+        createLine(0, y1, x2, y2, "additional-inf-" + i, "idSVG" + NumDiv, "%", "suplementar", "createLineAdditional(event,id)", "createLineTemp(event,id)", "deleteLine(id)");
     }
 }
 var i = 0;
@@ -42,5 +43,16 @@ function createDiv() {
 
     createSVG(i, "div" + i);
     createPauta("idSVG" + i);
+    lastLine(i);
     i++;
+}
+
+function lastLine(id) {
+    createLastLine("idSVG" + id);
+    removeLine("lastLine-idSVG" + (id - 1));
+    removeLine("lastLine2-idSVG" + (id - 1));
+    removeLine("lastLine3-idSVG" + (id - 1));
+    removeLine("lastLine4-idSVG" + (id - 1));
+    removeLine("lastLine5-idSVG" + (id - 1));
+    removeLine("lastLine6-idSVG" + (id - 1));
 }

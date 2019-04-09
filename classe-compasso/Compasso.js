@@ -19,5 +19,5 @@ function compasso(NumCompasso, idDiv) {
     for (let i = 1; i < NumCompasso; i++ , EspaCompasso += TamCompasso, id++) {
         createLine(EspaCompasso, y1, EspaCompasso, y2, "compasso" + id, idDiv, "%", "compasso", "");
     }
-    createLine(99.9, y1, 99.9, y2, "compasso" + id, idDiv, "%", "compasso", "");
+    createLine(99.3, y1, 99.3, y2, "compasso" + id, idDiv, "%", "compasso", "");
 }

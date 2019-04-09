@@ -38,6 +38,18 @@ function createLine(x1, y1, x2, y2, idName, idDiv, propriedade, classe, metodo, 
     document.getElementById(idDiv).appendChild(myLine);
 
 }
+
+//funcao para criar a linha que fecha a pauta...
+function createLastLine(idDiv) {
+    createLine(99.8, 40, 99.8, 60, "lastLine", idDiv, "%", "lastLine", "", "", "");
+    createLine(99.3, 40, 100, 40, "lastLine2", idDiv, "%", "", "", "", "");
+    createLine(99.3, 45, 100, 45, "lastLine3", idDiv, "%", "", "", "", "");
+    createLine(99.3, 50, 100, 50, "lastLine4", idDiv, "%", "", "", "", "");
+    createLine(99.3, 55, 100, 55, "lastLine5", idDiv, "%", "", "", "", "");
+    createLine(99.3, 60, 100, 60, "lastLine6", idDiv, "%", "", "", "", "");
+
+}
+
 var idAdditional = 0;
 //funcao para criar a linha suplementar, um pedaço de linha...
 function createLineAdditional(event, id) {
@@ -67,7 +79,7 @@ function createLineTemp(event, id) {
 function deleteLine(id) {
     let NumDiv = id.substring(22, 23);
     lineTemp--;
+    //id da linha temporaria...
     let idLine = "lineTemp" + lineTemp + "-idSVG" + NumDiv;
-    //usando jquery...
-    $('#' + idLine).remove();
+    removeLine(idLine);;
 }

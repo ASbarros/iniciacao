@@ -40,3 +40,9 @@ function returnPositionY(id) {
         }
     }
 }
+
+//funcao que remove...
+function removeLine(id) {
+    //usando jquery...
+    $('#' + id).remove();
+}
