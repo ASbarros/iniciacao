@@ -16,7 +16,7 @@ function time() {
             //id da linha ...
             var id = 'time' + (idTime - 1) + '-idSVG' + idSVG;
             removeLine(id);
-            if (x >= 99.3 ) {
+            if (x >= 99.3) {
                 x = 0;
                 removeLine("time" + idTime + "-idSVG" + (idSVG));
                 idSVG++;
@@ -24,7 +24,8 @@ function time() {
         }
         catch (e) {
             clearInterval(inter);
+            alert(e);
         }
     }, 40)
-    
+
 }
