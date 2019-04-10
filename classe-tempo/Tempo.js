@@ -24,7 +24,6 @@ function time() {
         }
         catch (e) {
             clearInterval(inter);
-            alert(e);
         }
     }, 40)
 

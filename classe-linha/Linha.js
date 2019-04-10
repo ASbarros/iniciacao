@@ -41,12 +41,12 @@ function createLine(x1, y1, x2, y2, idName, idDiv, propriedade, classe, metodo, 
 
 //funcao para criar a linha que fecha a pauta...
 function createLastLine(idDiv) {
-    createLine(99.8, 40, 99.8, 60, "lastLine", idDiv, "%", "lastLine", "", "", "");
-    createLine(99.3, 40, 100, 40, "lastLine2", idDiv, "%", "", "", "", "");
-    createLine(99.3, 45, 100, 45, "lastLine3", idDiv, "%", "", "", "", "");
-    createLine(99.3, 50, 100, 50, "lastLine4", idDiv, "%", "", "", "", "");
-    createLine(99.3, 55, 100, 55, "lastLine5", idDiv, "%", "", "", "", "");
-    createLine(99.3, 60, 100, 60, "lastLine6", idDiv, "%", "", "", "", "");
+    createLine(98.8, 40, 98.8, 60, "lastLine", idDiv, "%", "lastLine", "", "", "");
+    createLine(98.2, 40, 98.8, 40, "lastLine2", idDiv, "%", "", "", "", "");
+    createLine(98.2, 45, 98.8, 45, "lastLine3", idDiv, "%", "", "", "", "");
+    createLine(98.2, 50, 98.8, 50, "lastLine4", idDiv, "%", "", "", "", "");
+    createLine(98.2, 55, 98.8, 55, "lastLine5", idDiv, "%", "", "", "", "");
+    createLine(98.2, 60, 98.8, 60, "lastLine6", idDiv, "%", "", "", "", "");
 
 }
 
@@ -59,7 +59,7 @@ function createLineAdditional(event, id) {
     let NumDiv = id.substring(22, 23);
     //pegando o numero da div em que houve o click...
     y = returnPositionY(id);
-    createLine(x - 25, y, x - 3, y, "additional" + idAdditional, "idSVG" + NumDiv, "px", "additional", "", "");
+    createLine(x - 30, y, x - 8, y, "additional" + idAdditional, "idSVG" + NumDiv, "px", "additional", "", "");
     idAdditional++;
 }
 
@@ -71,7 +71,7 @@ function createLineTemp(event, id) {
     let x = event.pageX;
     let NumDiv = id.substring(22, 23);
     let y = returnPositionY(id);
-    createLine(x - 25, y, x - 3, y, "lineTemp" + lineTemp, "idSVG" + NumDiv, "px", "temp", "", "", "");
+    createLine(x - 30, y, x - 8, y, "lineTemp" + lineTemp, "idSVG" + NumDiv, "px", "temp", "", "", "");
     lineTemp++;
 }
 

@@ -63,5 +63,5 @@ button{
 }
 .lastLine{
     stroke-width: 0.5%;
-    stroke-linecap: square;
+    stroke-linecap: butt;
 }
