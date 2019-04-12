@@ -3,7 +3,7 @@
  * @author anderson dos santos de barros
  */
 
-var x = 0;
+var x = 5;
 function time() {
     //id da linha...
     var idTime = 0;
@@ -11,13 +11,13 @@ function time() {
     var inter = setInterval(function aux() {
         try {
             idTime++;
-            createLine(x, 40, x, 60, "time" + idTime, "idSVG" + idSVG, "%", "time", "", "", "");
+            createLine(x, 40, x, 60, "time" + idTime, "idSVG" + idSVG, "time", "", "", "");
             x = x + 0.18;
             //id da linha ...
             var id = 'time' + (idTime - 1) + '-idSVG' + idSVG;
             removeLine(id);
-            if (x >= 99.3) {
-                x = 0;
+            if (x >= 98.3) {
+                x = 5;
                 removeLine("time" + idTime + "-idSVG" + (idSVG));
                 idSVG++;
             }
@@ -25,6 +25,6 @@ function time() {
         catch (e) {
             clearInterval(inter);
         }
-    }, 40)
+    }, 30)
 
 }

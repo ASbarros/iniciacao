@@ -19,16 +19,16 @@ function createSVG(id, dad) {
 }
 
 //funcao cria linha...
-function createLine(x1, y1, x2, y2, idName, idDiv, propriedade, classe, metodo, metodo2, metodo3) {
+function createLine(x1, y1, x2, y2, idName, idDiv, classe, metodo, metodo2, metodo3) {
     //pegando o valor numerico da div...
     NumDiv = idDiv.substring(5, 6);
     //desenhando um linha...
     var myLine = document.createElementNS(svgNS, "line");
     myLine.setAttributeNS(null, "id", idName + "-" + idDiv);
-    myLine.setAttributeNS(null, "x1", x1 + propriedade);
-    myLine.setAttributeNS(null, "y1", y1 + propriedade);
-    myLine.setAttributeNS(null, "x2", x2 + propriedade);
-    myLine.setAttributeNS(null, "y2", y2 + propriedade);
+    myLine.setAttributeNS(null, "x1", x1 + "%");
+    myLine.setAttributeNS(null, "y1", y1 + "%");
+    myLine.setAttributeNS(null, "x2", x2 + "%");
+    myLine.setAttributeNS(null, "y2", y2 + "%");
     myLine.setAttributeNS(null, "class", classe);
     myLine.setAttributeNS(null, "onclick", metodo);
     myLine.setAttributeNS(null, "onmouseover", metodo2);
@@ -41,25 +41,24 @@ function createLine(x1, y1, x2, y2, idName, idDiv, propriedade, classe, metodo, 
 
 //funcao para criar a linha que fecha a pauta...
 function createLastLine(idDiv) {
-    createLine(98.8, 40, 98.8, 60, "lastLine", idDiv, "%", "lastLine", "", "", "");
-    createLine(98.2, 40, 98.8, 40, "lastLine2", idDiv, "%", "", "", "", "");
-    createLine(98.2, 45, 98.8, 45, "lastLine3", idDiv, "%", "", "", "", "");
-    createLine(98.2, 50, 98.8, 50, "lastLine4", idDiv, "%", "", "", "", "");
-    createLine(98.2, 55, 98.8, 55, "lastLine5", idDiv, "%", "", "", "", "");
-    createLine(98.2, 60, 98.8, 60, "lastLine6", idDiv, "%", "", "", "", "");
+    let x1 = 98.2, x2 = 98.8;
+    createLine(x2, 40, x2, 60, "lastLine", idDiv, "lastLine");
+    createLine(x1, 40, x2, 40, "lastLine2", idDiv);
+    createLine(x1, 45, x2, 45, "lastLine3", idDiv);
+    createLine(x1, 50, x2, 50, "lastLine4", idDiv);
+    createLine(x1, 55, x2, 55, "lastLine5", idDiv);
+    createLine(x1, 60, x2, 60, "lastLine6", idDiv);
 
 }
 
 var idAdditional = 0;
 //funcao para criar a linha suplementar, um pedaço de linha...
 function createLineAdditional(event, id) {
-    //como cada linha é fixa em cada div, os pixes de distancia do top sao os mesmos para todas as divs...
-    let y, x = event.pageX;
-    //precisa pegar apenas o eixo x...
-    let NumDiv = id.substring(22, 23);
-    //pegando o numero da div em que houve o click...
-    y = returnPositionY(id);
-    createLine(x - 30, y, x - 8, y, "additional" + idAdditional, "idSVG" + NumDiv, "px", "additional", "", "");
+    //pegando as posicoes...
+    let y = returnPositionY(id), x = returnPositionX(event);
+    //obtendo o numero da div...
+    let NumDiv = apenasNumeros(id.substring(20, id.size));
+    createLine(x - 1.5, y, x + 1, y, "additional" + idAdditional, "idSVG" + NumDiv, "additional");
     idAdditional++;
 }
 
@@ -68,10 +67,12 @@ var lineTemp = 0;
 
 //funcao que cria uma linha temporaria assim que o mouse passa sobre a linha adicional...
 function createLineTemp(event, id) {
-    let x = event.pageX;
-    let NumDiv = id.substring(22, 23);
-    let y = returnPositionY(id);
-    createLine(x - 30, y, x - 8, y, "lineTemp" + lineTemp, "idSVG" + NumDiv, "px", "temp", "", "", "");
+    //pegando as posicoes...
+    let y = returnPositionY(id), x = returnPositionX(event);
+    //obtendo o numero da div...
+    let NumDiv = apenasNumeros(id.substring(20, id.size));
+    //obtendo o numero da div...
+    createLine(x - 1.5, y, x + 1, y, "lineTemp" + lineTemp, "idSVG" + NumDiv);
     lineTemp++;
 }
 

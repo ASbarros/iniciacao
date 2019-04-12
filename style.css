@@ -13,7 +13,6 @@ header{
     min-height: 10%;
     background-color: rgb(118, 123, 124);
     text-align: center;
-    position: fixed;
 }
 line{
     stroke: rgb(23, 23, 29);
@@ -24,7 +23,12 @@ a{
     text-decoration: none;
 }
 div{
-    background-color: #fff;
+    background-color: rgb(34, 33, 33);
+    display: flex;
+    justify-content: space-around;
+}
+svg{
+    background-color: aliceblue;
 }
 button{
     border-radius: 3px;
@@ -50,10 +54,9 @@ button{
     margin-left: 1%;
 }
 .suplementar{
-    stroke-width: 2%;
+    stroke-width: 0.8%;
     opacity: 0.0;
 }
-
 .time{
     stroke: rgb(58, 12, 226);
     stroke-width: 0.4%;
