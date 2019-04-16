@@ -14,21 +14,41 @@ function createClaveSol(idDiv, name) {
     document.getElementById(idDiv).appendChild(claveSol);
 }
 
-
-
-var idSeminima = 0;
+//vetor para atualizar a posicao das notas...
+var vetObj = [];
+var armazenaX;
+var id = 0;
 
 function createNota(name) {
-    $('.svg').one('click', function createSeminima(event) {
+    //adicionando um evento ao todos os elementos svg...
+    $('svg').one('click', function create(event) {
+        this.classList.add('svg');
         let x = event.clientX - 115;
+        armazenaX = returnPositionX_porcentagem(event);
         var idDiv = event.target.id;
         let y = 120;
-        let seminima = document.createElementNS(svgNS, "path");
-        seminima.setAttributeNS(null, "id", name + idSeminima);
-        seminima.setAttributeNS(null, "stroke", "#000");
-        seminima.setAttributeNS(null, "d", getImagem(name));
-        seminima.setAttributeNS(null, 'transform', 'translate(' + x + ' ' + y + ')');
-        document.getElementById(idDiv).appendChild(seminima);
-        idSeminima++;
+        //event.target é o elemento clicado...
+        if (event.target && event.target.classList.contains('svg')) {
+            //elemento encontrado...
+            let nota = document.createElementNS(svgNS, "path");
+            nota.setAttributeNS(null, "id", "nota" + id);
+            nota.setAttributeNS(null, "stroke", "#000");
+            nota.setAttributeNS(null, "d", getImagem(name));
+            nota.setAttributeNS(null, 'transform', 'translate(' + x + ' ' + y + ')');
+            nota.setAttributeNS(null, 'x', armazenaX);
+            nota.setAttributeNS(null, 'y', y);
+            document.getElementById(idDiv).appendChild(nota);
+            //armazenado o obj...
+            vetObj.push(nota);
+            id++;
+        }
     });
+}
+while (true) {
+    setTimeout(function verifica() {
+        vetObj.forEach(function (element, index, array) {
+            element.setAttributeNS(null, 'transform', 'translate(' + returnPositionX_px(x) + ' ' + element.y + ')');
+        });
+        console.log(returnPositionX_px(x));
+    }, 1000);
 }

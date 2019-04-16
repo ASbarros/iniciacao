@@ -40,10 +40,15 @@ function returnPositionY(id) {
         }
     }
 }
-function returnPositionX(event) {
+function returnPositionX_porcentagem(event) {
     //retorna a posicao do click em porcentagem para qualquer tela...
     let x = (event.pageX * 100) / $(window).width();
     return x;
+}
+function returnPositionX_px(porcentagem) {
+    //recebe como parametro a porcentagem da tela e retorna a posicao em pixes...
+    let px = (porcentagem * $(window).width()) / 100;
+    return px;
 }
 
 //funcao que remove...
@@ -51,8 +56,7 @@ function removeLine(id) {
     //usando jquery...
     $('#' + id).remove();
 }
-function apenasNumeros(string) 
-{
-    var numsStr = string.replace(/[^0-9]/g,'');
+function apenasNumeros(string) {
+    var numsStr = string.replace(/[^0-9]/g, '');
     return parseInt(numsStr);
 }
