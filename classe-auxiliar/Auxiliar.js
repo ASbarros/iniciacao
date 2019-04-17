@@ -39,7 +39,7 @@ function returnPositionY(id) {
             return 85;
         }
     }
-}
+} 
 function returnPositionX_porcentagem(event) {
     //retorna a posicao do click em porcentagem para qualquer tela...
     let x = (event.pageX * 100) / $(window).width();

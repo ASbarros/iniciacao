@@ -14,7 +14,8 @@ function createClaveSol(idDiv, name) {
     document.getElementById(idDiv).appendChild(claveSol);
 }
 
-//vetor para atualizar a posicao das notas...
+//vetor para atualizar a posicao das notas,
+//guarda os ids das notas...
 var vetObj = [];
 var armazenaX;
 var id = 0;
@@ -25,6 +26,9 @@ function createNota(name) {
         this.classList.add('svg');
         let x = event.clientX - 115;
         armazenaX = returnPositionX_porcentagem(event);
+        console.log(event.clientX);
+        console.log(armazenaX);
+        console.log(returnPositionX_px(armazenaX));
         var idDiv = event.target.id;
         let y = 120;
         //event.target é o elemento clicado...
@@ -33,22 +37,27 @@ function createNota(name) {
             let nota = document.createElementNS(svgNS, "path");
             nota.setAttributeNS(null, "id", "nota" + id);
             nota.setAttributeNS(null, "stroke", "#000");
+            nota.setAttributeNS(null, 'width', '10%');
             nota.setAttributeNS(null, "d", getImagem(name));
             nota.setAttributeNS(null, 'transform', 'translate(' + x + ' ' + y + ')');
             nota.setAttributeNS(null, 'x', armazenaX);
             nota.setAttributeNS(null, 'y', y);
             document.getElementById(idDiv).appendChild(nota);
             //armazenado o obj...
-            vetObj.push(nota);
+            vetObj.push('nota' + id);
             id++;
         }
     });
 }
-while (true) {
-    setTimeout(function verifica() {
-        vetObj.forEach(function (element, index, array) {
-            element.setAttributeNS(null, 'transform', 'translate(' + returnPositionX_px(x) + ' ' + element.y + ')');
-        });
-        console.log(returnPositionX_px(x));
-    }, 1000);
+
+window.onresize = function () {
+    for (let i = 0; i < vetObj.length; i++) {
+        let a = document.getElementById(vetObj[i]);
+        //removendo o atributo antigo...
+        a.removeAttributeNS(null, 'transform', a.localName);
+        //inserindo um novo atributo com a posicao atual
+        a.setAttributeNS(null, 'transform',
+            'translate(' + (returnPositionX_px(a.getAttributeNS(null, 'x', a.localName)) - 115) + ' ' + 120 + ')'
+        );
+    }
 }

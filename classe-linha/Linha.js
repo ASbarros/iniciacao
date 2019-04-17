@@ -10,7 +10,6 @@ function createSVG(id, dad) {
     //desenhando a tela a ser pintada...
     var canvasSVG = document.createElementNS(svgNS, "svg");
     canvasSVG.setAttributeNS(null, "id", "idSVG" + id);
-    canvasSVG.setAttributeNS(null, "class", "sgv");
     canvasSVG.setAttributeNS(null, "width", "100%");
     canvasSVG.setAttributeNS(null, "height", "100%");
 
