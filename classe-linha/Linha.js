@@ -12,6 +12,7 @@ function createSVG(id, dad) {
     canvasSVG.setAttributeNS(null, "id", "idSVG" + id);
     canvasSVG.setAttributeNS(null, "width", "100%");
     canvasSVG.setAttributeNS(null, "height", "100%");
+    canvasSVG.setAttributeNS(null, "class", "svg");
 
     //apendando o elemento no corpo do svg...
     document.getElementById(dad).appendChild(canvasSVG);
@@ -30,7 +31,7 @@ function createLine(x1, y1, x2, y2, idName, idDiv, classe, metodo, metodo2, meto
     myLine.setAttributeNS(null, "x2", x2 + "%");
     myLine.setAttributeNS(null, "y2", y2 + "%");
     myLine.setAttributeNS(null, "class", classe);
-    myLine.setAttributeNS(null, "onclick", metodo);
+    myLine.setAttributeNS(null, "onclick", metodo); 
     myLine.setAttributeNS(null, "onmouseover", metodo2);
     myLine.setAttributeNS(null, "onmouseout", metodo3);
 
@@ -57,7 +58,7 @@ function createLineAdditional(event, id) {
     //pegando as posicoes...
     let y = returnPositionY(id), x = returnPositionX_porcentagem(event);
     //obtendo o numero da div...
-    let NumDiv = apenasNumeros(id.substring(20, id.size));
+    let NumDiv = apenasNumeros(id.substring(id.length - 2, id.length));
     createLine(x - 1.5, y, x + 1, y, "additional" + idAdditional, "idSVG" + NumDiv, "additional");
     idAdditional++;
 }
@@ -70,7 +71,7 @@ function createLineTemp(event, id) {
     //pegando as posicoes...
     let y = returnPositionY(id), x = returnPositionX_porcentagem(event);
     //obtendo o numero da div...
-    let NumDiv = apenasNumeros(id.substring(20, id.size));
+    let NumDiv = apenasNumeros(id.substring(id.length - 2, id.length));
     //obtendo o numero da div...
     createLine(x - 1.5, y, x + 1, y, "lineTemp" + lineTemp, "idSVG" + NumDiv);
     lineTemp++;
@@ -78,7 +79,7 @@ function createLineTemp(event, id) {
 
 //funcao para apagar a linha temporaria, quando o mouse sair da linha adicional...
 function deleteLine(id) {
-    let NumDiv = id.substring(22, 23);
+    let NumDiv = apenasNumeros(id.substring(id.length - 2, id.length));
     lineTemp--;
     //id da linha temporaria...
     let idLine = "lineTemp" + lineTemp + "-idSVG" + NumDiv;

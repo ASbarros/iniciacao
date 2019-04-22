@@ -20,14 +20,9 @@ function createPauta(idDiv) {
     createClaveSol(idDiv, 'claveSol');
     compasso(4, idDiv);
     //criando as linhas adicionais superiores...
-    for (let i = 5, y1 = 15, y2 = y1; linha < i; i-- , y1 = y1 + espacamento, y2 = y1) {
-        createLine(7, y1, x2, y2, "additional-sup-" + i, "idSVG" + NumDiv, "suplementar",
-            "createLineAdditional(event,id)", "createLineTemp(event,id)", "deleteLine(id)");
-    }
-    //cirando as linhas adicionais infeires...
-    for (let i = 5, y1 = 85, y2 = y1; linha < i; i-- , y1 = y1 - espacamento, y2 = y1) {
-        createLine(7, y1, x2, y2, "additional-inf-" + i, "idSVG" + NumDiv, "suplementar",
-            "createLineAdditional(event,id)", "createLineTemp(event,id)", "deleteLine(id)");
+    for (let i = 29, y1 = 15, y2 = y1; linha < i; i-- , y1 = y1 + (espacamento / 2), y2 = y1) {
+        createLine(7, y1, x2, y2, "additional" + i, "idSVG" + NumDiv, "suplementar",
+            "createLineAdditional(event,id)");
     }
 }
 var i = 0;
@@ -39,7 +34,6 @@ function createDiv() {
     div.setAttribute('class', 'corpo');
     div.setAttribute("width", "100%");
     div.setAttribute("height", "500px");
-
 
     //anexa a "div" criada com o novo conteúdo 
     document.body.appendChild(div);

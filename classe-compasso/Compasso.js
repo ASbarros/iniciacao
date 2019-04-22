@@ -16,7 +16,7 @@ function compasso(NumCompasso, idDiv) {
     let id = 0;
     id++;
     for (let i = 1; i < NumCompasso; i++ , EspaCompasso += TamCompasso, id++) {
-        createLine(EspaCompasso, y1, EspaCompasso, y2, "compasso" + id, idDiv, "compasso", "");
+        createLine(EspaCompasso, y1, EspaCompasso, y2, "compasso" + id, idDiv, "compasso");
     }
-    createLine(98.2, y1, 98.2, y2, "compasso" + id, idDiv, "compasso", "");
+    createLine(98.2, y1, 98.2, y2, "compasso" + id, idDiv, "compasso");
 }
