@@ -19,7 +19,7 @@ function createPauta(idDiv) {
     }
     createClaveSol(idDiv, 'claveSol');
     compasso(4, idDiv);
-    //criando as linhas adicionais superiores...
+    //criando as linhas adicionais ...
     for (let i = 29, y1 = 15, y2 = y1; linha < i; i-- , y1 = y1 + (espacamento / 2), y2 = y1) {
         createLine(7, y1, x2, y2, "additional" + i, "idSVG" + NumDiv, "suplementar",
             "createLineAdditional(event,id)");
@@ -45,11 +45,8 @@ function createDiv() {
 }
 
 function lastLine(id) {
+    for (let index = 1; index <= 6; index++) {
+        removeLine('lastLine' + index + '-idSVG' + (id - 1));
+    }
     createLastLine("idSVG" + id);
-    removeLine("lastLine-idSVG" + (id - 1));
-    removeLine("lastLine2-idSVG" + (id - 1));
-    removeLine("lastLine3-idSVG" + (id - 1));
-    removeLine("lastLine4-idSVG" + (id - 1));
-    removeLine("lastLine5-idSVG" + (id - 1));
-    removeLine("lastLine6-idSVG" + (id - 1));
 }

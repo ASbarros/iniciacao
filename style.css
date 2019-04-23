@@ -55,7 +55,7 @@ button{
 }
 .suplementar{
     stroke-width: 0.4%;
-    opacity: 0.4;
+    opacity: 0.05;
 }
 .time{
     stroke: rgb(58, 12, 226);
@@ -67,4 +67,9 @@ button{
 .lastLine{
     stroke-width: 0.5%;
     stroke-linecap: butt;
+}
+.circle{
+    stroke: #000;
+    stroke-width: 1px;
+    fill:none;
 }

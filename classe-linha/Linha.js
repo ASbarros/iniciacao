@@ -31,7 +31,7 @@ function createLine(x1, y1, x2, y2, idName, idDiv, classe, metodo, metodo2, meto
     myLine.setAttributeNS(null, "x2", x2 + "%");
     myLine.setAttributeNS(null, "y2", y2 + "%");
     myLine.setAttributeNS(null, "class", classe);
-    myLine.setAttributeNS(null, "onclick", metodo); 
+    myLine.setAttributeNS(null, "onclick", metodo);
     myLine.setAttributeNS(null, "onmouseover", metodo2);
     myLine.setAttributeNS(null, "onmouseout", metodo3);
 
@@ -42,14 +42,11 @@ function createLine(x1, y1, x2, y2, idName, idDiv, classe, metodo, metodo2, meto
 
 //funcao para criar a linha que fecha a pauta...
 function createLastLine(idDiv) {
-    let x1 = 98.2, x2 = 98.8;
-    createLine(x2, 40, x2, 60, "lastLine", idDiv, "lastLine");
-    createLine(x1, 40, x2, 40, "lastLine2", idDiv);
-    createLine(x1, 45, x2, 45, "lastLine3", idDiv);
-    createLine(x1, 50, x2, 50, "lastLine4", idDiv);
-    createLine(x1, 55, x2, 55, "lastLine5", idDiv);
-    createLine(x1, 60, x2, 60, "lastLine6", idDiv);
-
+    let x1 = 98.2, x2 = 98.8, y = 40;
+    for (let i = 2; i <= 6; i++ , y += 5) {
+        createLine(x1, y, x2, y, "lastLine" + i, idDiv);
+    }
+    createLine(x2, 40, x2, 60, "lastLine1", idDiv, "lastLine");
 }
 
 var idAdditional = 0;

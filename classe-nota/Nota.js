@@ -18,15 +18,13 @@ var armazenaX, y;
 var id = 0;
 function createNota(name) {
     //adicionando um evento ao todos os elementos linhas additional...
-    $('.svg').one('click', function create(event) {
-        //this.classList.add('suplementar');
+    $('.svg').one('click', function (event) {
         //event.target é o elemento clicado...
         if (event.target && event.target.classList.contains('suplementar')) {
             //elemento encontrado...
             let x = event.clientX - 120;
             let idDiv = event.target.id;
             y = returnPositionY_px(idDiv);
-            console.log(idDiv);
             armazenaX = returnPositionX_porcentagem(event);
             let nota = document.createElementNS(svgNS, "path");
             nota.setAttributeNS(null, "id", "nota" + id);
@@ -43,7 +41,7 @@ function createNota(name) {
         }
     });
 }
-window.onresize = function () {
+window.onresize = () => {
     for (let i = 0; i < vetObj.length; i++) {
         let a = document.getElementById(vetObj[i]);
         //removendo o atributo antigo...

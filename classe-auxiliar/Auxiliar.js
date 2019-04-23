@@ -6,7 +6,7 @@
 
 function returnPositionY(id) {
     let resposta = apenasNumeros(id.substring(id.length - 10, id.length - 5));
-    return 85 - (2.5 * (resposta - 1))
+    return 85 - (2.5 * (resposta - 1));
 }
 
 function returnPositionY_px(id) {
@@ -47,22 +47,22 @@ function returnPositionY_px(id) {
         return 76;
     }
     if (id.substring(10, 12) == 17) {
-        return 86;
+        return 81;
     }
     if (id.substring(10, 12) == 16) {
-        return 96;
+        return 90;
     }
     if (id.substring(10, 12) == 15) {
         return 100;
     }
     if (id.substring(10, 12) == 14) {
-        return 116;
+        return 110;
     }
     if (id.substring(10, 12) == 13) {
-        return 126;
+        return 118;
     }
     if (id.substring(10, 12) == 12) {
-        return 126;
+        return 127;
     }
     if (id.substring(10, 12) == 11) {
         return 136;
@@ -77,27 +77,26 @@ function returnPositionY_px(id) {
         return 166;
     }
     if (id.substring(10, 11) == 7) {
-        return 176;
+        return 175;
     }
     if (id.substring(10, 11) == 6) {
-        return 186;
+        return 184;
     }
     if (id.substring(10, 11) == 5) {
-        return 196;
+        return 194;
     }
     if (id.substring(10, 11) == 4) {
-        return 206;
+        return 203;
     }
     if (id.substring(10, 11) == 3) {
-        return 216;
+        return 213;
     }
     if (id.substring(10, 11) == 2) {
-        return 226;
+        return 222;
     }
     if (id.substring(10, 11) == 1) {
         return 230;
     }
-
 }
 
 function returnPositionX_porcentagem(event) {
