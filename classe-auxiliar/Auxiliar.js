@@ -13,7 +13,7 @@ function returnPositionY_px(id) {
     if (id.substring(10, 12) == 29) {
         return -34;
     }
-    if (id.substring(10, 12) == 28) {
+    if (id.substring(10, 12) == 28) { 
         return -24;
     }
     if (id.substring(10, 12) == 27) {
@@ -111,7 +111,7 @@ function returnPositionX_px(porcentagem) {
 }
 
 //funcao que remove...
-function removeLine(id) {
+function remove_id(id) {
     //usando jquery...
     $('#' + id).remove();
 }

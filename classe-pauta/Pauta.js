@@ -46,7 +46,7 @@ function createDiv() {
 
 function lastLine(id) {
     for (let index = 1; index <= 6; index++) {
-        removeLine('lastLine' + index + '-idSVG' + (id - 1));
+        remove_id('lastLine' + index + '-idSVG' + (id - 1));
     }
     createLastLine("idSVG" + id);
 }

@@ -80,5 +80,5 @@ function deleteLine(id) {
     lineTemp--;
     //id da linha temporaria...
     let idLine = "lineTemp" + lineTemp + "-idSVG" + NumDiv;
-    removeLine(idLine);;
+    remove_id(idLine);;
 }
