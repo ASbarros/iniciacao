@@ -41,10 +41,10 @@ function returnPositionY_px(id) {
         return 56;
     }
     if (id.substring(10, 12) == 19) {
-        return 66;
+        return 63;
     }
     if (id.substring(10, 12) == 18) {
-        return 76;
+        return 72;
     }
     if (id.substring(10, 12) == 17) {
         return 81;
