@@ -14,7 +14,6 @@ function createClaveSol(idDiv, name) {
 //vetor para atualizar a posicao das notas,
 //guarda os ids das notas...
 var vetObj = [];
-var armazenaX, y;
 var id = 0;
 function createNota(name) {
     //adicionando um evento ao todos os elementos linhas additional...
@@ -22,18 +21,21 @@ function createNota(name) {
         //event.target é o elemento clicado...
         if (event.target && event.target.classList.contains('suplementar')) {
             //elemento encontrado...
-            let x = event.clientX - 120;
+
+            let x = event.clientX;
             let idDiv = event.target.id;
-            y = returnPositionY_px(idDiv);
-            armazenaX = returnPositionX_porcentagem(event);
+            //objeto...
+            let objNota = new getImagem(name);
+            //salvando as coordenadas x, y...
+            let y = returnPositionY_px(idDiv);
+            let armazenaX = returnPositionX_porcentagem(x - objNota.x);
             let nota = document.createElementNS(svgNS, "path");
             nota.setAttributeNS(null, "id", "nota" + id);
             nota.setAttributeNS(null, "stroke", "#000");
-            nota.setAttributeNS(null, 'width', '10%');
-            nota.setAttributeNS(null, "d", getImagem(name));
-            nota.setAttributeNS(null, 'transform', 'translate(' + x + ' ' + y + ')');
+            nota.setAttributeNS(null, "d", objNota.imagem);
+            nota.setAttributeNS(null, 'transform', 'translate(' + (x - objNota.x) + ' ' + (y - objNota.y) + ')');
             nota.setAttributeNS(null, 'x', armazenaX);
-            nota.setAttributeNS(null, 'y', y);
+            nota.setAttributeNS(null, 'y', (y - objNota.y));
             document.getElementById(idDiv.substring(idDiv.length - 6, idDiv.length)).appendChild(nota);
             //armazenado o obj...
             vetObj.push('nota' + id);
@@ -48,7 +50,8 @@ window.onresize = () => {
         a.removeAttributeNS(null, 'transform', a.localName);
         //inserindo um novo atributo com a posicao atual
         a.setAttributeNS(null, 'transform',
-            'translate(' + (returnPositionX_px(a.getAttributeNS(null, 'x', a.localName)) - 115) + ' ' + y + ')'
+            'translate(' + (returnPositionX_px(a.getAttributeNS(null, 'x', a.localName))) +
+            ' ' + a.getAttributeNS(null, 'y', a.localName) + ')'
         );
     }
 }

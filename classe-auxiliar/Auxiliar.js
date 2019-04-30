@@ -14,7 +14,7 @@ function returnPositionY_px(id) {
         return -34;
     }
     if (id.substring(10, 12) == 28) { 
-        return -24;
+        return -22;
     }
     if (id.substring(10, 12) == 27) {
         return -14;
@@ -99,9 +99,9 @@ function returnPositionY_px(id) {
     }
 }
 
-function returnPositionX_porcentagem(event) {
+function returnPositionX_porcentagem(valor) {
     //retorna a posicao do click em porcentagem para qualquer tela...
-    let x = (event.pageX * 100) / $(window).width();
+    let x = (valor * 100) / $(window).width();
     return x;
 }
 function returnPositionX_px(porcentagem) {

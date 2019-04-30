@@ -34,7 +34,6 @@ function time() {
                 var id = 'time' + (idTime - 1) + '-idSVG' + idSVG;
                 remove_id(id);
                 if (x >= 98.3) {
-                    console.log(Tscroll);
                     window.scrollTo(0, Tscroll);
                     Tscroll = Tscroll + 350;
                     //voltando ao inicio da pauta...

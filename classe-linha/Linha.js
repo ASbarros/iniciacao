@@ -53,10 +53,10 @@ var idAdditional = 0;
 //funcao para criar a linha suplementar, um pedaço de linha...
 function createLineAdditional(event, id) {
     //pegando as posicoes...
-    let y = returnPositionY(id), x = returnPositionX_porcentagem(event);
+    let y = returnPositionY(id), x = returnPositionX_porcentagem(event.pageX);
     //obtendo o numero da div...
     let NumDiv = apenasNumeros(id.substring(id.length - 2, id.length));
-    createLine(x - 1.5, y, x + 1, y, "additional" + idAdditional, "idSVG" + NumDiv, "additional");
+    //createLine(x - 1.5, y, x + 1, y, "additional" + idAdditional, "idSVG" + NumDiv, "additional");
     idAdditional++;
 }
 
