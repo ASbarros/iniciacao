@@ -14,8 +14,6 @@ function createSVG(_id, _dad) {
     canvasSVG.setAttributeNS(null, "height", "100%");
     canvasSVG.setAttributeNS(null, "class", "svg");
     canvasSVG.setAttributeNS(null, "version", "1.1");
-    canvasSVG.setAttribute(null, 'xmlns', "http://www.w3.org/2000/svg");
-    canvasSVG.setAttribute(null, 'xmlns:xlink',"http://www.w3.org/1999/xlink");
 
     document.getElementById(_dad).appendChild(canvasSVG);
     //apendando o elemento no corpo do svg...

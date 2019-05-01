@@ -8,6 +8,7 @@ const tempo = 10;
 let a = 0.3;
 var idSVG = 0;
 function time() {
+    //createAudio(0);
     var idTime = 0;
     //id da linha...
     createCircle('grande' + idSVG, 1.5);
