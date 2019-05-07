@@ -13,20 +13,23 @@
 <body onload="createDiv()">
     <header>
         <h1>Pauta</h1>
-        <br><!--onclick="ajustar()"-->
-        <button > Ajustar </button>
+        <p></p>
+        <button onclick="join()"> Juntar notas </button>
         <button onclick="createDiv()"> Mais pauta </button>
         <button onclick="time()"> Iniciar </button>
-        <button onclick="createNota('colcheia')">Colcheia</button>
-        <button onclick="createNota('semicolcheia')">Semicolcheia</button>
-        <button onclick="createNota('fusa')">Fusa</button>
-        <button onclick="createNota('semifusa')">Semifusa</button>
-        <button onclick="createNota('semibreve')">Semibreve</button>
-        <button onclick="createNota('minima')">Mínima</button>
-        <button onclick="createNota('seminima')">Seminima</button>
-        <button onclick="createNota('sustenido')">Sustenido</button>
+        <button onclick="createNote('colcheia')">Colcheia</button>
+        <button onclick="createNote('semicolcheia')">Semicolcheia</button>
+        <button onclick="createNote('fusa')">Fusa</button>
+        <button onclick="createNote('semifusa')">Semifusa</button>
+        <button onclick="createNote('semibreve')">Semibreve</button>
+        <button onclick="createNote('minima')">Mínima</button>
+        <button onclick="createNote('seminima')">Seminima</button>
+        <button onclick="createNote('sustenido')">Sustenido</button>
     </header>
     <script src="bibliotecas/jquery/jquery-3.3.1.min.js"></script>
+    <script src="bibliotecas/jquery/jquery-2.1.4.js"></script>
+    <script src="bibliotecas/jquery/jquery-ui-1.9.2.custom.js"></script>
+    <script src="bibliotecas/jquery/jquery-ui-1.9.2.custom.min.js"></script>
     <script src="classe-linha/Linha.js"></script>
     <script src="classe-pauta/Pauta.js"></script>
     <script src="classe-compasso/Compasso.js"></script>
@@ -36,4 +39,5 @@
     <script src="classe-imagem/imagens.js"></script>
     <script src="classe-audio/audio.js"></script>
 </body>
+
 </html>

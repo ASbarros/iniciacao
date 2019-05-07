@@ -7,6 +7,7 @@ var x = 5;
 const tempo = 10;
 let a = 0.3;
 var idSVG = 0;
+
 function time() {
     //createAudio(0);
     var idTime = 0;
@@ -50,8 +51,7 @@ function time() {
                     //criando o proximo timer...
                     createCircle(idSVG, 0.3);
                 }
-            }
-            catch (e) {
+            } catch (e) {
                 clearInterval(inter);
                 clearInterval(timer);
                 idSVG = 0;
@@ -60,6 +60,7 @@ function time() {
         //deley...
     }, 300);
 }
+
 function createCircle(_i, _r) {
     var circle = document.createElementNS(svgNS, "circle");
     circle.setAttributeNS(null, "id", 'circle-' + _i);

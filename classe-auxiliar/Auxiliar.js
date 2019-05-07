@@ -13,7 +13,7 @@ function returnPositionY_px(id) {
     if (id.substring(10, 12) == 29) {
         return -34;
     }
-    if (id.substring(10, 12) == 28) { 
+    if (id.substring(10, 12) == 28) {
         return -22;
     }
     if (id.substring(10, 12) == 27) {
@@ -104,6 +104,14 @@ function returnPositionX_porcentagem(valor) {
     let x = (valor * 100) / $(window).width();
     return x;
 }
+
+function returnPositionX_porcentagemSVG(valor) {
+    //retorna a posicao do click em porcentagem para qualquer tela...
+    let x = (valor * 100) / $('.svg').width();
+    return x;
+}
+
+
 function returnPositionX_px(porcentagem) {
     //recebe como parametro a porcentagem da tela e retorna a posicao em pixes...
     let px = (porcentagem * $(window).width()) / 100;
@@ -115,6 +123,7 @@ function remove_id(id) {
     //usando jquery...
     $('#' + id).remove();
 }
+
 function apenasNumeros(string) {
     var numsStr = string.replace(/[^0-9]/g, '');
     return parseInt(numsStr);

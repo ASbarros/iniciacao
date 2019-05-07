@@ -13,7 +13,7 @@ function createPauta(_idDiv) {
         //onde sera a primeira linha...
         x2 = 98.2,
         x1 = 0.7;
-    for (let i = 5, y1 = primeiraLinha, y2 = y1; linha < i; i-- , y1 = y1 + espacamento, y2 = y1) {
+    for (let i = 5, y1 = primeiraLinha, y2 = y1; linha < i; i--, y1 = y1 + espacamento, y2 = y1) {
         //criando as linhas, cada uma com seu identificador...
         createLine(x1, y1, x2, y2, "line" + i, _idDiv, "linha");
     }
@@ -21,12 +21,13 @@ function createPauta(_idDiv) {
     createCompassFormula(_idDiv, 'quatro', 50, 105);
     createCompassFormula(_idDiv, 'quatro', 45, 150);
     compasso(4, _idDiv);
-    for (let i = 29, y1 = 15, y2 = y1; linha < i; i-- , y1 = y1 + (espacamento / 2), y2 = y1) {
+    for (let i = 29, y1 = 15, y2 = y1; linha < i; i--, y1 = y1 + (espacamento / 2), y2 = y1) {
         createLine(7, y1, x2, y2, "additional" + i, "idSVG" + NumDiv, "suplementar");
         //criando as linhas adicionais ...
     }
 }
 let i = 0;
+
 function createDiv() {
     //funcao para criar mais pautas...
     var div = document.createElement('div');

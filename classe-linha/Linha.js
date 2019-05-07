@@ -39,8 +39,10 @@ function createLine(x1, y1, x2, y2, idName, idDiv, classe) {
 
 //funcao para criar a linha que fecha a pauta...
 function createLastLine(idDiv) {
-    let x1 = 98.2, x2 = 98.8, y = 40;
-    for (let i = 2; i <= 6; i++ , y += 5) {
+    let x1 = 98.2,
+        x2 = 98.8,
+        y = 40;
+    for (let i = 2; i <= 6; i++, y += 5) {
         createLine(x1, y, x2, y, "lastLine" + i, idDiv);
     }
     createLine(x2, 40, x2, 60, "lastLine1", idDiv, "lastLine");
